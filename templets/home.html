@@ -11,17 +11,26 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div clss="container pt-5">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <img src="{% static 'images/12.png'%}" alt=""width=250>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                
-            </div>
-        </div>
-    </div>
+    <h1>Employee List </h1>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sr.no</th>
+      <th scope="col">first name</th>
+      <th scope="col">designation</th>
+      <th scope="col">phone no</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for emp in employess %}
+    <tr>
+    <td>{{forloop.counter}}</td>
+      <td>{{emp.first_name}} {{emp.last_name}}</td>
+      <td>{{emp.designation}}</td>
+      <td>{{emp.phone_no}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>   
 </html>
